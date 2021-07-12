@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>COVID-19 Detector</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="static/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="static/images/favicons/site.webmanifest">
+
+    <!-- plugin scripts -->
+
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700%7CBarlow:300,400,500,600,700,800,900%7CPT+Sans:400,700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="static/css/animate.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="static/css/magnific-popup.css">
+    <link rel="stylesheet" href="static/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="static/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="static/css/vimns-icons.css">
+
+
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/responsive.css">
+
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <!-- <title>Au Register Forms by Colorlib</title> -->
+
+    <!-- Icons font CSS-->
+    <link href="static/New/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="static/New/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="static/New/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="static/New/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="static/New/css/main.css" rel="stylesheet" media="all">
+
+
+</head>
+
+<body>
+    <div class="preloader">
+        <img src="static/images/loader.png" class="preloader__image" alt="">
+    </div><!-- /.preloader -->
+    <div class="page-wrapper">
+
+        <header class="site-header-one">
+            <nav class="main-nav__one stricky">
+                <div class="container-fluid">
+                    <div class="main-nav__logo-box">
+                        <a href="index.html">
+                            <img width="137" src="static/images/logo-1-1.png" alt="">
+                        </a>
+                        <a href="#" class="side-menu__toggler"><i class="fa fa-bars"></i></a>
+                    </div><!-- /.main-nav__logo-box -->
+                    <div class="main-nav__main-navigation">
+                        <ul class=" main-nav__navigation-box">
+                            <li class="dropdown">
+                                <a href="index.html">Home</a>   
+                            </li>
+                            <li class="dropdown">
+                                <a href="https://news.google.com/search?q=covid">News</a>
+                            </li>
+                            <li>
+                                <a href="contact.html">Contact</a>
+                            </li>
+                            <li>
+                                <a href="detect.html">Detect COVID</a>
+                            </li>
+                            <li>
+                                <a href="cwbp.html">Zone Detect</a>
+                            </li>
+                        </ul>
+                    </div><!-- /.main-nav__main-navigation -->
+                    <!--<div class="main-nav__cta">
+                        <div class="main-nav__cta-icon">
+                            <i class="vimns-icon-phone"></i>
+                        </div> /.main-nav__cta-icon
+                        <div class="main-nav__cta-content">
+                            <h3><a href="tel:7003871310">7003871310</a></h3>
+                            <p>Helpline</p>
+                        </div>/.main-nav__cta-content
+                    </div>/.main-nav__cta -->
+                    <div class="main-nav__right">
+                        <a href="detect.html" class="main-nav__btn">Detect COVID</a><!-- /.main-nav__btn -->
+                    </div><!-- /.main-nav__right -->
+                </div><!-- /.container-fluid -->
+            </nav><!-- /.main-nav__one -->
+
+        </header><!-- /.site-header-one -->
+
+
+        <section class="page-header">
+            <div class="container">
+                <h2>Risk Zone Detector</h2>
+                <ul class="thm-breadcrumb list-unstyled">
+                    <li><a href="#">Home</a></li>
+                    <li><span>Zone Detect </span></li>
+                </ul><!-- /.thm-breadcrumb -->
+            </div><!-- /.container -->
+        </section><!-- /.page-header -->
+
+
+        <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+            <div class="wrapper wrapper--w680">
+                <div class="card card-1">
+                    <div class="card-heading"></div>
+                    <div class="card-body">
+                        <div class="block-title text-center"><h3>Risk zone Detector</h3></div>
+                        <div class="input-group">
+                            {% if prediction==5 %}
+                            <label  class="text-uppercase font-weight-bold text-primary">{{position}}:
+                                <span class='safe'>Great! You are very low risk zone.</span></label>
+                            <img class="gif1" src="{{ url_for('static', filename='relief.webp') }}">
+                            {% elif prediction==2 %}
+                            <label  class="text-uppercase font-weight-bold text-primary">{{position}}:
+                                <span class='safe'>Great! You are low risk zone.</span></label>
+                            <img class="gif1" src="{{ url_for('static', filename='relief.webp') }}" >
+                            {% elif prediction==3 %}
+				            <label  class="text-uppercase font-weight-bold text-primary">{{position}}:
+                                <span class='safe'>Great! You are medium risk zone.</span></label>
+                            <img class="gif1" src="{{ url_for('static', filename='alert.webp') }}">
+                            {% elif prediction==0 %}
+				            <label  class="text-uppercase font-weight-bold text-primary">{{position}}:
+                                <span class='danger'>Oops! You are extra high risk zone.</span></label>
+                            <img class="gif1" src="{{ url_for('static', filename='fear.webp') }}">
+                            {% elif prediction==1 %}
+				            <label  class="text-uppercase font-weight-bold text-primary">{{position}}:
+                                <span class='danger'>Oops! You are high risk zone.</span></label>
+                            <img class="gif1" src="{{ url_for('static', filename='alert.webp') }}">
+                            {% elif prediction==4 %}
+				            <label  class="text-uppercase font-weight-bold text-primary">{{position}}:
+                                <span class='danger '>Oops! You are very high risk zone.</span></label>
+                            <img class="gif1" src="{{ url_for('static', filename='fear.webp') }}">
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <section class="hand-wash-one">
+            <div class="container">
+                <div class="block-title text-center">
+                    <p>4 Easy Steps </p>
+                    <h3>Hand Wash Procedure</h3>
+                </div><!-- /.block-title text-center -->
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
+                        <div class="hand-wash-one__single">
+                            <div class="hand-wash-one__image">
+                                <img src="static/images/shapes/hw-i-1-1.png" alt="">
+                            </div><!-- /.hand-wash-one__image -->
+                            <h3>Use Soap</h3>
+                        </div><!-- /.hand-wash-one__single -->
+                    </div><!-- /.col-lg-3 col-md-6 wow fadeInUp -->
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
+                        <div class="hand-wash-one__single">
+                            <div class="hand-wash-one__image">
+                                <img src="static/images/shapes/hw-i-1-2.png" alt="">
+                            </div><!-- /.hand-wash-one__image -->
+                            <h3>Palm to Palm</h3>
+                        </div><!-- /.hand-wash-one__single -->
+                    </div><!-- /.col-lg-3 col-md-6 wow fadeInUp -->
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
+                        <div class="hand-wash-one__single">
+                            <div class="hand-wash-one__image">
+                                <img src="static/images/shapes/hw-i-1-3.png" alt="">
+                            </div><!-- /.hand-wash-one__image -->
+                            <h3>Fingers Interlaced</h3>
+                        </div><!-- /.hand-wash-one__single -->
+                    </div><!-- /.col-lg-3 col-md-6 wow fadeInUp -->
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms">
+                        <div class="hand-wash-one__single">
+                            <div class="hand-wash-one__image">
+                                <img src="static/images/shapes/hw-i-1-4.png" alt="">
+                            </div><!-- /.hand-wash-one__image -->
+                            <h3>Rinse Hands</h3>
+                        </div><!-- /.hand-wash-one__single -->
+                    </div><!-- /.col-lg-3 col-md-6 wow fadeInUp -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.hand-wash-one -->
+
+        <section class="cta-one">
+            <div class="container">
+                <div class="cta-one__left">
+                    <h3>How You'll Protect Yourself and Stay Safe</h3>
+                </div><!-- /.cta-one__left -->
+                <div class="cta-one__right">
+                    <a href="#" class="thm-btn cta-one__btn">Discover More</a><!-- /.thm-btn cta-one__btn -->
+                </div><!-- /.cta-one__right -->
+            </div><!-- /.container -->
+        </section><!-- /.cta-one -->
+
+
+        <footer class="site-footer-one site-footer-one__home-one">
+
+            <div class="site-footer-one__upper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="footer-widget footer-widget__about">
+                                <a href="index.html" class="footer-widget__logo">
+                                    <img width="137" src="static/images/loader.png" alt="">
+                                </a>
+                                <p></p>
+                            </div><!-- /.footer-widget footer-widget__about -->
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-3">
+                            <div class="footer-widget footer-widget__links">
+                                <h3 class="footer-widget__title">Developed By</h3><!-- /.footer-widget__title -->
+                                <div class="footer-widget__links-wrap">
+                                    <img src="{{ url_for('static', filename = 'images/me.jpg') }}"  alt="jaysoftic" height="47%" width="70%" title = "jaysoftic" class = "dish_frame_all_diet" style="padding: 1%;" align="right">
+                                    <!-- /.list-unstyled -->
+                                    <!-- /.list-unstyled -->
+                                </div><!-- /.footer-widget__links-wrap -->
+
+                            </div><!-- /.footer-widget footer-widget__about -->
+                        </div><!-- /.col-lg-3 -->
+                        <div class="col-lg-3">
+                            <div class="footer-widget footer-widget__contact">
+                                <h3 class="footer-widget__title">Contact</h3><!-- /.footer-widget__title -->
+                                <p><a href="tel:+917439314026">+917439314026</a></p>
+                                <p><a href="banerjeesurat@gmail.com">banerjeesurat@gmail.com</a> </p>
+                                <p>Serampore, Hooghly<br> Kolkata 712223</p>
+                            </div><!-- /.footer-widget footer-widget__contact -->
+                        </div><!-- /.col-lg-3 -->
+                        <div class="col-lg-2 d-flex">
+                            <div class="footer-widget my-auto">
+                                <div class="footer-widget__social">
+                                    <h4><a href="https://github.com/Surat-96" target="_blank"><i class="fab fa-github"></i></a></h4>
+                                    <br><br><br>
+                                    <h4><a href="https://suratbanerjee.wixsite.com/myportfoliob" target="_blank">LINK</a></h4>
+                                </div><!--/.footer-widget__social -->
+                            </div><!--/.footer-widget-->
+                        </div><!-- /.col-lg-2 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </div><!-- /.site-footer-one__upper -->
+            <div class="site-footer-one__bottom">
+                <div class="container">
+                    <p>© copyright 2020 by <a href="#">SURAT BANERJEE</a></p>
+                </div><!-- /.container -->
+            </div><!-- /.site-footer-one__bottom -->
+        </footer><!-- /.site-footer-one -->
+    </div><!-- /.page-wrapper -->
+
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+
+    <div class="side-menu__block">
+
+
+        <div class="side-menu__block-overlay custom-cursor__overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-menu__block-overlay -->
+        <div class="side-menu__block-inner ">
+            <div class="side-menu__top justify-content-end">
+
+                <a href="#" class="side-menu__toggler side-menu__close-btn"><img src="static/images/shapes/close-1-1.png" alt=""></a>
+            </div><!-- /.side-menu__top -->
+
+
+            <nav class="mobile-nav__container">
+                <!-- content is loading via js -->
+            </nav>
+            <div class="side-menu__sep"></div><!-- /.side-menu__sep -->
+            <div class="side-menu__content">
+                <p></p>
+                <p><a href="mailto:banerjeesurat@gmail.com">banerjeesurat@gmail.com</a> <br> <a href="tel:+917439314026">+917439314026</a></p>
+                <div class="side-menu__social">
+                    <h4><a href="https://github.com/Surat-96" target="_blank"><i class="fab fa-github"></i></a></h4>
+                    <br><br><br>
+                    <h4><a href="https://suratbanerjee.wixsite.com/myportfoliob" target="_blank">LINK</a></h4>
+                </div>
+            </div><!-- /.side-menu__content -->
+        </div><!-- /.side-menu__block-inner -->
+    </div><!-- /.side-menu__block -->
+
+
+
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/owl.carousel.min.js"></script>
+    <script src="static/js/waypoints.min.js"></script>
+    <script src="static/js/jquery.counterup.min.js"></script>
+    <script src="static/js/TweenMax.min.js"></script>
+    <script src="static/js/wow.js"></script>
+    <script src="static/js/jquery.magnific-popup.min.js"></script>
+    <script src="static/js/jquery.ajaxchimp.min.js"></script>
+    <script src="static/js/jquery.validate.min.js"></script>
+    <script src="static/js/bootstrap-select.min.js"></script>
+    <script src="static/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="static/js/bootstrap-datepicker.min.js"></script>
+    <script src="static/js/isotope.js"></script>
+
+    <!-- template scripts -->
+    <script src="static/js/theme.js"></script>
+    <script src="static/js/testimonials-owl.carousel.config.js"></script>
+
+    <!-- Jquery JS-->
+    <script src="static/New/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="static/New/vendor/select2/select2.min.js"></script>
+    <script src="static/New/vendor/datepicker/moment.min.js"></script>
+    <script src="static/New/vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="js/global.js"></script>
+
+
+</body>
+
+</html>
